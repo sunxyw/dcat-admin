@@ -161,7 +161,7 @@ class PublishCommand extends Command
                 && (! $manager->has('to://'.$file['path']) || $this->option('force'))
                 && ! $this->isExceptPath($manager, $file['path'])
             ) {
-                $manager->put('to://'.$file['path'], $manager->read('from://'.$file['path']));
+                $manager->write('to://'.$file['path'], $manager->read('from://'.$file['path']));
             }
         }
     }
